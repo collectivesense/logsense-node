@@ -21,3 +21,26 @@ For [Winston](https://github.com/winstonjs/winston) add:
 const logsense = require('logsense')('YOUR_LOGSENSE_CUSTOMER_TOKEN')
 logger.add(new logsense.WinstonTransport())
 ```
+
+## Usage
+
+Common messages are auto-discovered into patterns:
+
+```javascript
+const sendEmail = ({ address }) => {
+  console.info(`Send email to ${address}`)
+}
+```
+<img width="819" alt="zrzut ekranu 2019-03-7 o 20 28 17" src="https://user-images.githubusercontent.com/1618590/53983582-cb289b00-4117-11e9-983d-2802957b7eb5.png">
+
+Last argument is used for structured logging:
+
+```javascript
+const sendEmail = ({ address, topic }) => {
+  console.info(`Send email to ${address}`, { topic })
+}
+```
+<img width="822" alt="zrzut ekranu 2019-03-7 o 20 32 15" src="https://user-images.githubusercontent.com/1618590/53983702-1d69bc00-4118-11e9-94e1-5055e31ea7bc.png">
+
+Discovered and structured parameters can be used in charts:
+<img width="963" alt="zrzut ekranu 2019-03-7 o 20 40 23" src="https://user-images.githubusercontent.com/1618590/53984237-4048a000-4119-11e9-9c78-28fd243c4c96.png">
