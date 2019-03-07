@@ -4,8 +4,8 @@ const TIMEOUT = 200 // time to close idling fluentd
 
 module.exports = ({ token }) => {
   const fluent = FluentLogger.createFluentSender('structured', {
-    host: 'syslog.cloud.csnetw.com',//'logs.logsense.com',
-    port: 31714,//32714,
+    host: 'logs.logsense.com',
+    port: 32714,
     requireAckResponse: true,
     eventMode: 'CompressedPackedForward',
     timeout: 3000,
